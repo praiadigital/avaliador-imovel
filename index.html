@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Avaliador de Imóvel do Litoral | Praia Digital</title>
+<meta name="description" content="Estimativa instantânea do valor do seu imóvel no litoral paulista por cidade, área, quartos e padrão. Satélite de praia.digital.">
+<style>
+body{font-family:system-ui,-apple-system,sans-serif;margin:0;background:#f8fafc;color:#0f172a;line-height:1.6}
+.hero{background:linear-gradient(135deg,#134e4a,#0d9488);color:#fff;padding:50px 20px;text-align:center}
+.container{max-width:1000px;margin:0 auto;padding:30px 20px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
+.card{background:#fff;border-radius:12px;padding:20px;box-shadow:0 2px 8px rgba(0,0,0,.08)}
+.cta{display:inline-block;background:#fff;color:#0c4a6e;padding:10px 22px;border-radius:8px;text-decoration:none;font-weight:700;margin:6px}
+button{background:#0284c7;color:#fff;border:none;padding:10px 18px;border-radius:8px;font-weight:700;cursor:pointer}
+input,select,textarea{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:8px;margin:6px 0;font-family:inherit}
+.resultado{background:#0f172a;color:#a7f3d0;border-radius:12px;padding:20px;font-size:1.15em}
+footer{text-align:center;padding:24px;color:#64748b;font-size:.9em}
+</style>
+</head>
+<body>
+<nav style="background:#0c4a6e;padding:12px 20px;display:flex;gap:14px;flex-wrap:wrap;font-family:system-ui,sans-serif">
+<a style="color:#e0f2fe;text-decoration:none;font-weight:600" href="https://praia.digital/">🌊 Praia Digital</a>
+<a style="color:#e0f2fe;text-decoration:none;font-weight:600" href="https://praiadigital.github.io/apps/">Hub</a>
+<a style="color:#e0f2fe;text-decoration:none;font-weight:600" href="https://praiadigital.github.io/hermes-agents/">Hermes</a>
+<a style="color:#e0f2fe;text-decoration:none;font-weight:600" href="https://praiadigital.github.io/area-anfitriao/">Anfitrião</a>
+<a style="color:#e0f2fe;text-decoration:none;font-weight:600" href="https://praiadigital.github.io/simulador-roi/">ROI</a>
+<a style="color:#e0f2fe;text-decoration:none;font-weight:600" href="https://praiadigital.github.io/simulador-credito/">Crédito</a>
+<a style="color:#e0f2fe;text-decoration:none;font-weight:600" href="https://praiadigital.github.io/guia-litoral/">Guia</a>
+<a style="color:#e0f2fe;text-decoration:none;font-weight:600" href="https://praiadigital.github.io/blog-litoral/">Blog</a>
+<a style="color:#e0f2fe;text-decoration:none;font-weight:600" href="https://praiadigital.github.io/calculadoras/">Calculadoras</a>
+<a style="color:#e0f2fe;text-decoration:none;font-weight:600" href="https://praiadigital.github.io/newsletter-litoral/">Newsletter</a>
+<a style="color:#e0f2fe;text-decoration:none;font-weight:600" href="https://praiadigital.github.io/eventos-litoral/">Eventos</a>
+<a style="color:#e0f2fe;text-decoration:none;font-weight:600" href="https://praiadigital.github.io/radar-precos/">Radar</a>
+<a style="color:#e0f2fe;text-decoration:none;font-weight:600" href="https://praiadigital.github.io/concierge-ia/">Concierge</a>
+<a style="color:#e0f2fe;text-decoration:none;font-weight:600" href="https://praiadigital.github.io/mapa-investidor/">Mapa</a>
+<a style="color:#e0f2fe;text-decoration:none;font-weight:600" href="https://praiadigital.github.io/checklist-anfitriao/">Checklist</a>
+<a style="color:#e0f2fe;text-decoration:none;font-weight:600" href="https://praiadigital.github.io/precificador-temporada/">Precificador</a>
+<a style="color:#e0f2fe;text-decoration:none;font-weight:600" href="https://praiadigital.github.io/gerador-anuncio/">Anúncios</a>
+<a style="color:#e0f2fe;text-decoration:none;font-weight:600" href="https://praiadigital.github.io/avaliador-imovel/">Avaliador</a>
+<a style="color:#e0f2fe;text-decoration:none;font-weight:600" href="https://praiadigital.github.io/quiz-praia-ideal/">Quiz</a>
+</nav>
+<div class="hero"><h1>🏠 Avaliador de Imóvel</h1><p>Estimativa instantânea de valor de mercado usando os dados do Radar de Preços.</p>
+<a class="cta" href="https://praiadigital.github.io/radar-precos/">📡 Ver dados por cidade</a></div>
+<div class="container"><div class="grid">
+<div class="card">
+<label>Cidade</label><select id="cidade"><option value="4900">Peruíbe</option><option value="5200">Mongaguá</option><option value="5600">Itanhaém</option><option value="6800">São Vicente</option><option value="7400">Praia Grande</option><option value="9200">Bertioga</option><option value="11800">Santos</option><option value="12500" selected>Guarujá</option></select>
+<label>Área (m²)</label><input id="area" type="number" value="70">
+<label>Quartos</label><select id="quartos"><option value="0.95">1</option><option value="1.0" selected>2</option><option value="1.06">3</option><option value="1.12">4+</option></select>
+<label>Posição</label><select id="pos"><option value="0.92">Quadra interna</option><option value="1.0" selected>Próximo à praia</option><option value="1.18">Frente para o mar</option></select>
+<label>Estado do imóvel</label><select id="estado"><option value="0.88">Precisa reforma</option><option value="1.0" selected>Bom estado</option><option value="1.1">Reformado / novo</option></select>
+<button onclick="calc()">🏷️ Avaliar</button></div>
+<div class="card"><h3>Estimativa</h3><div id="out" class="resultado">Preencha e avalie 👆</div>
+<p style="margin-top:12px;color:#475569;font-size:.9em">Estimativa automatizada para referência. Avaliação profissional considera documentação, condomínio e comparáveis reais.</p></div>
+</div>
+<div class="card"><h3>💰 Vale a pena investir?</h3><p>Leve o valor estimado ao <a href="https://praiadigital.github.io/mapa-investidor/">Mapa do Investidor</a> e simule a rentabilidade no <a href="https://praiadigital.github.io/simulador-roi/">Simulador ROI</a> e nas <a href="https://praiadigital.github.io/calculadoras/">Calculadoras</a>.</p></div>
+</div>
+<script>
+function calc(){
+const m2=+document.getElementById('cidade').value,a=+document.getElementById('area').value||0;
+const f=+document.getElementById('quartos').value*+document.getElementById('pos').value*+document.getElementById('estado').value;
+const v=Math.round(m2*a*f/1000)*1000;
+document.getElementById('out').innerHTML=`R$ ${v.toLocaleString('pt-BR')}<br><span style="font-size:.75em;opacity:.8">Faixa: R$ ${Math.round(v*0.92/1000)*1000} – R$ ${Math.round(v*1.08/1000)*1000}</span>`;}
+</script>
+<footer>© Praia Digital — 2026 — Satélite da rede <a href="https://praia.digital">praia.digital</a> · <a href="https://praiadigital.github.io/apps/">Ver todos os apps</a></footer>
+</body>
+</html>
